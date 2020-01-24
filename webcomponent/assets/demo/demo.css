@@ -71,3 +71,8 @@
   padding-top: 20px;
   
 }
+
+.pagination .page-item.active .page-link {
+  background-color: #942bae!important;
+
+}
