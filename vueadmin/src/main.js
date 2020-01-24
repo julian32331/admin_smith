@@ -31,7 +31,9 @@ import Notifications from "./components/NotificationPlugin";
 import MaterialDashboard from "./material-dashboard";
 
 import Chartist from "chartist";
-
+import 'bootstrap-css-only/css/bootstrap.min.css'
+import 'mdbvue/lib/css/mdb.min.css'
+import '@fortawesome/fontawesome-free/css/all.min.css'
 // configure router
 const router = new VueRouter({
   routes, // short for routes: routes
