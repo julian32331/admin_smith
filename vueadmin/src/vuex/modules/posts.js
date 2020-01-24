@@ -1,12 +1,14 @@
 import * as api from "@/api";
 const state = {
   posts: [],
+  gotPosts: false,
   selectedPost: {}
 };
 // getters
 const getters = {
   posts: state => state.posts,
-  selectedPost: state => state.selectedPost
+  selectedPost: state => state.selectedPost,
+  gotPosts: state => state.gotPosts
 };
 // mutations
 const mutations = {
@@ -14,6 +16,7 @@ const mutations = {
     var postData = await api.getPosts();
     state.posts = postData.data;
     state.selectedPost = state.posts[0];
+    state.gotPosts = true;
   },
   setSelectedPost: (state, payload) => {
     state.selectedPost = payload.item;

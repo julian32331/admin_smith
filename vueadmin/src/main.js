@@ -34,10 +34,28 @@ import Chartist from "chartist";
 import 'bootstrap-css-only/css/bootstrap.min.css'
 import 'mdbvue/lib/css/mdb.min.css'
 import '@fortawesome/fontawesome-free/css/all.min.css'
+
+
+const { dispatch, getters } = store;
+
+dispatch('users/setUsers');
+dispatch('posts/setPosts');
+
 // configure router
 const router = new VueRouter({
   routes, // short for routes: routes
   linkExactActiveClass: "nav-item active"
+});
+
+router.beforeEach((to, from, next) => {
+  var watch = setInterval(function() {
+    var gotUsers = getters['users/gotUsers'];
+    var gotPosts = getters['posts/gotPosts'];
+    if (gotUsers && gotPosts) {
+      clearInterval(watch);
+      next();
+    }
+  }, 10);
 });
 
 Vue.prototype.$Chartist = Chartist;

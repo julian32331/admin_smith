@@ -1,12 +1,14 @@
 import * as api from "@/api";
 const state = {
   users: [],
+  gotUsers: false,
   selectedUser: {}
 };
 // getters
 const getters = {
   users: state => state.users,
-  selectedUser: state => state.selectedUser
+  selectedUser: state => state.selectedUser,
+  gotUsers: state => state.gotUsers
 };
 // mutations
 const mutations = {
@@ -14,6 +16,7 @@ const mutations = {
     var userData = await api.getUsers();
     state.users = userData.data;
     state.selectedUser = state.users[0];
+    state.gotUsers = true;
   },
   setSelectedUser: (state, payload) => {
     state.selectedUser = payload.item;

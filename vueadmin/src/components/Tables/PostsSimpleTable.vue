@@ -1,15 +1,5 @@
 <template>
-  <div>
-    <!-- <md-table v-model="posts" :table-header-color="tableHeaderColor">
-      <md-table-row
-        slot-scope="{ item }"
-        v-on:click="onSelect(item)"
-        slot="md-table-row"
-      >
-        <md-table-cell md-label="PostID">{{ item.id }}</md-table-cell>
-        <md-table-cell md-label="Title">{{ item.title }}</md-table-cell>
-      </md-table-row>
-    </md-table> -->
+  <div>   
         <mdb-datatable
         :data="data"
         striped

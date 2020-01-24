@@ -19,7 +19,7 @@
     </side-bar>
 
     <div class="main-panel">
-      <top-navbar></top-navbar>
+      <!-- <top-navbar></top-navbar> -->
 
       <dashboard-content> </dashboard-content>
 
@@ -36,7 +36,7 @@ import MobileMenu from "@/pages/Layout/MobileMenu.vue";
 import { StaticHeader } from "@/components";
 export default {
   components: {
-    TopNavbar,
+    // TopNavbar,
     DashboardContent,
     ContentFooter,
     MobileMenu,
